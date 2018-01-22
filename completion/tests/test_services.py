@@ -1,10 +1,17 @@
 """
 Tests of completion xblock runtime services
 """
+
+from __future__ import unicode_literals
+
 import ddt
 from django.test import TestCase
 from opaque_keys.edx.keys import CourseKey, UsageKey
-from student.tests.factories import UserFactory
+
+try:
+    from student.tests.factories import UserFactory
+except ImportError:
+    pass
 
 from ..models import BlockCompletion
 from ..services import CompletionService

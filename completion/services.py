@@ -2,6 +2,8 @@
 Runtime service for communicating completion information to the xblock system.
 """
 
+from __future__ import unicode_literals
+
 from .models import BlockCompletion
 from . import waffle
 
@@ -54,6 +56,7 @@ class CompletionService(object):
             course_key=self._course_key,
             block_key__in=candidates,
         )
+        # pylint: disable=not-an-iterable
         completions = {block.block_key: block.completion for block in completion_queryset}
         for candidate in candidates:
             if candidate not in completions:

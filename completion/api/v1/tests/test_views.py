@@ -3,15 +3,21 @@
 Test models, managers, and validators.
 """
 
+from __future__ import unicode_literals
+
 import ddt
 from django.core.urlresolvers import reverse
-from rest_framework.test import APIClient, force_authenticate
+from rest_framework.test import APIClient
+
+try:
+    from openedx.core.djangoapps.content.course_structures.tasks import update_course_structure
+    from student.tests.factories import UserFactory, CourseEnrollmentFactory
+    from xmodule.modulestore.tests.django_utils import ModuleStoreTestCase
+    from xmodule.modulestore.tests.factories import CourseFactory, ItemFactory
+except ImportError:
+    pass
 
 from completion import waffle
-from student.tests.factories import UserFactory, CourseEnrollmentFactory
-from xmodule.modulestore.tests.django_utils import ModuleStoreTestCase
-from xmodule.modulestore.tests.factories import CourseFactory, ItemFactory
-from openedx.core.djangoapps.content.course_structures.tasks import update_course_structure
 
 
 @ddt.ddt

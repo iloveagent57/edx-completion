@@ -7,10 +7,14 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 from django.contrib.auth.models import User
 from django.dispatch import receiver
 
-from lms.djangoapps.grades.signals.signals import PROBLEM_WEIGHTED_SCORE_CHANGED
 from opaque_keys.edx.keys import CourseKey, UsageKey
 from xblock.completable import XBlockCompletionMode
 from xblock.core import XBlock
+
+try:
+    from lms.djangoapps.grades.signals.signals import PROBLEM_WEIGHTED_SCORE_CHANGED
+except ImportError:
+    pass
 
 from .models import BlockCompletion
 from . import waffle

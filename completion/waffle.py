@@ -4,7 +4,10 @@ waffle switches for the completion app.
 """
 from __future__ import absolute_import, division, print_function, unicode_literals
 
-from openedx.core.djangoapps.waffle_utils import WaffleSwitchNamespace
+try:
+    from openedx.core.djangoapps.waffle_utils import WaffleSwitchNamespace
+except ImportError:
+    pass
 
 # Namespace
 WAFFLE_NAMESPACE = 'completion'

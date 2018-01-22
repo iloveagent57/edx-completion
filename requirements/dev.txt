@@ -13,10 +13,11 @@ click==6.7                # via pip-tools
 configparser==3.5.0       # via pydocstyle
 diff-cover==1.0.2
 distlib==0.2.6            # via caniusepython3
+djangorestframework==3.6.3
 django-model-utils==3.0.0
-django==1.8.18
 edx-i18n-tools==0.4.3
 edx-lint==0.5.4
+edx-opaque-keys==0.4.1
 first==2.0.1              # via pip-tools
 futures==3.2.0            # via caniusepython3
 idna==2.6                 # via requests
@@ -36,6 +37,7 @@ pycodestyle==2.3.1
 pydocstyle==2.1.1
 pygments==2.2.0           # via diff-cover
 pyparsing==2.2.0          # via packaging
+pytz==2016.7
 pyyaml==3.12              # via edx-i18n-tools
 requests-toolbelt==0.8.0  # via twine
 requests==2.18.4          # via caniusepython3, requests-toolbelt, twine
@@ -48,3 +50,4 @@ twine==1.9.1
 urllib3==1.22             # via requests
 virtualenv==15.1.0        # via tox
 wheel==0.30.0
+XBlock==1.1.1

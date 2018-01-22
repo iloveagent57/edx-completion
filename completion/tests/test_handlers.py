@@ -2,6 +2,8 @@
 Test signal handlers.
 """
 
+from __future__ import unicode_literals
+
 from datetime import datetime
 
 import ddt
@@ -13,8 +15,11 @@ import six
 from xblock.completable import XBlockCompletionMode
 from xblock.core import XBlock
 
-from lms.djangoapps.grades.signals.signals import PROBLEM_WEIGHTED_SCORE_CHANGED
-from student.tests.factories import UserFactory
+try:
+    from lms.djangoapps.grades.signals.signals import PROBLEM_WEIGHTED_SCORE_CHANGED
+    from student.tests.factories import UserFactory
+except ImportError:
+    pass
 
 from .. import handlers
 from ..models import BlockCompletion

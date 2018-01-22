@@ -1,4 +1,9 @@
-""" API v1 views. """
+"""
+API v1 views.
+"""
+
+from __future__ import unicode_literals
+
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 from django.utils.translation import ugettext as _
@@ -12,10 +17,14 @@ from rest_framework import status
 from opaque_keys.edx.keys import CourseKey, UsageKey
 from opaque_keys import InvalidKeyError
 
-from lms.djangoapps.completion.models import BlockCompletion
-from openedx.core.djangoapps.content.course_structures.models import CourseStructure
-from openedx.core.lib.api.permissions import IsStaffOrOwner
-from student.models import CourseEnrollment
+try:
+    from lms.djangoapps.completion.models import BlockCompletion
+    from openedx.core.djangoapps.content.course_structures.models import CourseStructure
+    from openedx.core.lib.api.permissions import IsStaffOrOwner
+    from student.models import CourseEnrollment
+except ImportError:
+    pass
+
 from completion import waffle
 
 
@@ -89,7 +98,7 @@ class CompletionBatchView(APIView):
 
         return user, course_key_obj, block_objs
 
-    def post(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):  # pylint: disable=unused-argument
         """
         Inserts a batch of completions.
 

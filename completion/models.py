@@ -6,12 +6,16 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.db import models, transaction, connection
+from django.db import models, transaction
 from django.utils.translation import ugettext as _
 from model_utils.models import TimeStampedModel
 from opaque_keys.edx.keys import CourseKey
 
-from openedx.core.djangoapps.xmodule_django.models import CourseKeyField, UsageKeyField
+try:
+    from openedx.core.djangoapps.xmodule_django.models import CourseKeyField, UsageKeyField
+except ImportError:
+    pass
+
 from . import waffle
 
 # pylint: disable=ungrouped-imports
@@ -87,7 +91,7 @@ class BlockCompletionManager(models.Manager):
             )
 
         if waffle.waffle().is_enabled(waffle.ENABLE_COMPLETION_TRACKING):
-            obj, is_new = self.get_or_create(
+            obj, is_new = self.get_or_create(  # pylint: disable=unpacking-non-sequence
                 user=user,
                 course_key=course_key,
                 block_type=block_type,

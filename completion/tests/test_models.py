@@ -8,7 +8,10 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from opaque_keys.edx.keys import UsageKey, CourseKey
 
-from student.tests.factories import UserFactory, CourseEnrollmentFactory
+try:
+    from student.tests.factories import UserFactory, CourseEnrollmentFactory
+except ImportError:
+    pass
 
 from .. import models
 from .. import waffle
@@ -28,7 +31,13 @@ class PercentValidatorTestCase(TestCase):
 
 
 class CompletionSetUpMixin(object):
+    """
+    Mixin to provide set_up_completion() function to child TestCase classes.
+    """
     def set_up_completion(self):
+        """
+        Creates a stub completion record for a (user, course, block).
+        """
         self.user = UserFactory()
         self.block_key = UsageKey.from_string(u'block-v1:edx+test+run+type@video+block@doggos')
         self.completion = models.BlockCompletion.objects.create(
@@ -116,7 +125,9 @@ class SubmitCompletionTestCase(CompletionSetUpMixin, TestCase):
 
 
 class CompletionDisabledTestCase(CompletionSetUpMixin, TestCase):
-
+    """
+    Test that completion is not track when the feature switch is disabled.
+    """
     @classmethod
     def setUpClass(cls):
         super(CompletionDisabledTestCase, cls).setUpClass()

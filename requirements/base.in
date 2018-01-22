@@ -1,4 +1,0 @@
-# Core requirements for using this application
-
-Django==1.8.18                    # Web application framework
-django-model-utils==3.0.0        # Provides TimeStampedModel abstract base class

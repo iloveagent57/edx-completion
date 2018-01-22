@@ -10,11 +10,7 @@ from django.db import models, transaction
 from django.utils.translation import ugettext as _
 from model_utils.models import TimeStampedModel
 from opaque_keys.edx.keys import CourseKey
-
-try:
-    from openedx.core.djangoapps.xmodule_django.models import CourseKeyField, UsageKeyField
-except ImportError:
-    pass
+from opaque_keys.edx.django.models import CourseKeyField, UsageKeyField
 
 from . import waffle
 
@@ -22,7 +18,7 @@ from . import waffle
 try:
     from django.models import BigAutoField  # New in django 1.10
 except ImportError:
-    from openedx.core.djangolib.fields import BigAutoField
+    from .fields import BigAutoField
 # pylint: enable=ungrouped-imports
 
 

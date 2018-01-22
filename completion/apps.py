@@ -10,7 +10,7 @@ class CompletionAppConfig(AppConfig):
     """
     App Configuration for Completion
     """
-    name = 'lms.djangoapps.completion'
+    name = 'completion'
     verbose_name = 'Completion'
 
     def ready(self):

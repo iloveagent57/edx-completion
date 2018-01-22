@@ -20,7 +20,6 @@ from .models import BlockCompletion
 from . import waffle
 
 
-@receiver(PROBLEM_WEIGHTED_SCORE_CHANGED)
 def scorable_block_completion(sender, **kwargs):  # pylint: disable=unused-argument
     """
     When a problem is scored, submit a new BlockCompletion for that block.

@@ -18,7 +18,6 @@ from opaque_keys.edx.keys import CourseKey, UsageKey
 from opaque_keys import InvalidKeyError
 
 try:
-    from lms.djangoapps.completion.models import BlockCompletion
     from openedx.core.djangoapps.content.course_structures.models import CourseStructure
     from openedx.core.lib.api.permissions import IsStaffOrOwner
     from student.models import CourseEnrollment
@@ -26,6 +25,7 @@ except ImportError:
     pass
 
 from completion import waffle
+from completion.models import BlockCompletion
 
 
 class CompletionBatchView(APIView):

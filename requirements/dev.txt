@@ -17,7 +17,7 @@ djangorestframework==3.6.3
 django-model-utils==3.0.0
 edx-i18n-tools==0.4.3
 edx-lint==0.5.4
--e git+https://github.com/edx/opaque-keys.git@f3c946240283219d07321504517c6a682c691625#egg=edx-opaque-keys[django]==0.4.2
+-e git+https://github.com/edx/opaque-keys.git@381c817228df6197242db5232b6e168ea9577b6e#egg=edx-opaque-keys[django]==0.4.2
 first==2.0.1              # via pip-tools
 futures==3.2.0            # via caniusepython3
 idna==2.6                 # via requests

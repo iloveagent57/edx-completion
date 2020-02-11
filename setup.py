@@ -47,7 +47,7 @@ setup(
     ],
     include_package_data=True,
     install_requires=[
-        "Django>=1.8,<1.11", "django-model-utils>=2.0"
+        "Django>=1.8,<1.12", "django-model-utils>=2.0"
     ],
     license="AGPL 3.0",
     zip_safe=False,

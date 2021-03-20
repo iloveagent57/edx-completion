@@ -24,7 +24,7 @@ idna==2.6                 # via requests
 inflect==0.2.5            # via jinja2-pluralize
 isort==4.2.15
 jinja2-pluralize==0.3.0   # via diff-cover
-jinja2==2.10              # via diff-cover, jinja2-pluralize
+jinja2==2.11.3              # via diff-cover, jinja2-pluralize
 markupsafe==1.0           # via jinja2
 packaging==16.8           # via caniusepython3
 path.py==10.5             # via edx-i18n-tools

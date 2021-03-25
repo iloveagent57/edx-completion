@@ -38,7 +38,7 @@ pydocstyle==2.1.1
 pygments==2.2.0           # via diff-cover
 pyparsing==2.2.0          # via packaging
 pytz==2016.7
-pyyaml==3.12              # via edx-i18n-tools
+pyyaml==5.4              # via edx-i18n-tools
 requests-toolbelt==0.8.0  # via twine
 requests==2.18.4          # via caniusepython3, requests-toolbelt, twine
 six==1.11.0               # via diff-cover, edx-i18n-tools, packaging, pip-tools, pydocstyle, tox

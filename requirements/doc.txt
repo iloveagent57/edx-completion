@@ -18,7 +18,7 @@ imagesize==0.7.1          # via sphinx
 jinja2==2.10              # via sphinx
 markupsafe==1.0           # via jinja2
 pbr==3.1.1                # via stevedore
-pygments==2.2.0           # via readme-renderer, sphinx
+pygments==2.7.4           # via readme-renderer, sphinx
 pytz==2017.3              # via babel
 readme-renderer==17.2
 restructuredtext-lint==1.1.2  # via doc8

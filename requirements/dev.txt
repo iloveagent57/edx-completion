@@ -32,7 +32,7 @@ pip-tools==1.11.0
 pkginfo==1.4.1            # via twine
 pluggy==0.6.0             # via tox
 polib==1.1.0              # via edx-i18n-tools
-py==1.5.2                 # via tox
+py==1.10.0                 # via tox
 pycodestyle==2.3.1
 pydocstyle==2.1.1
 pygments==2.2.0           # via diff-cover
